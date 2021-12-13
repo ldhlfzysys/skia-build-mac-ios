@@ -47,7 +47,7 @@ export PATH="${DEPOT_TOOLS_DIR}:${PATH}"
 echo "Building Skia for mac"
 cd "${SKIA_DIR}"
 BUILD_DIR="${BUILD_DIR}/mac"
-./bin/gn gen "${BUILD_DIR}" --args='target_os="mac" target_cpu="x64" is_official_build=true skia_use_system_libwebp=false skia_use_system_icu=false skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false skia_use_system_libwebp=false skia_use_system_zlib=false skia_use_system_harfbuzz=false skia_pdf_subset_harfbuzz=true skia_use_metal=true skia_enable_skottie=false --ide=xcode'
+./bin/gn gen "${BUILD_DIR}" --args='target_os="mac" target_cpu="x64" is_official_build=true skia_use_system_libwebp=false skia_use_system_icu=false skia_use_system_libjpeg_turbo=false skia_use_system_libpng=false skia_use_system_libwebp=false skia_use_system_zlib=false skia_use_system_harfbuzz=false skia_pdf_subset_harfbuzz=true skia_use_metal=true skia_enable_skottie=false' --ide=xcode
 ninja -C "${BUILD_DIR}" -j2
 cd "${PROJECT_DIR}"
 copy_libraries_in_place "${BUILD_DIR}" 'osx' 'x86_64'
